@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/kamoljan/skills-ledger/issues"
   },
-  "homepage": "https://github.com/kamoljan/skills-ledger#readme"
+  "homepage": "https://github.com/kamoljan/skills-ledger#readme",
+  "dependencies": {
+    "truffle-hdwallet-provider": "^1.0.3"
+  }
 }

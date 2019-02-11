@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kamoljan/skills-ledger#readme",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "truffle-hdwallet-provider": "^1.0.3"
   }
 }

@@ -70,6 +70,13 @@ module.exports = {
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
 
+    getho: {
+      host: process.env.GETHO_HOST,
+      port: 80,
+      network_id: 1010,
+      gas: 4712388
+    },
+
     // Useful for private networks
     // private: {
       // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),

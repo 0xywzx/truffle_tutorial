@@ -8,7 +8,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol";
 contract ERC721TokenStandard is ERC721Token {
   uint256 internal nextTokenId = 0;
 
-  constructor() public ERC721Token("MyToken", "MTKN") {}
+  constructor(string _name, string _symbol) public ERC721Token(_name, _symbol) {}
 
   function mint() external {
     uint256 tokenId = nextTokenId;

@@ -2,14 +2,12 @@
  * @dev See https://github.com/truffle-box/react-box/blob/master/migrations/2_deploy_contracts.js
  */
 var SimpleStorage = artifacts.require("./SimpleStorage.sol");
-var ERC721NFTTokenStandard = artifacts.require("./ERC721TokenStandard.sol");
+var ERC721TokenStandard = artifacts.require("./ERC721TokenStandard.sol");
 
-module.exports = function(deployer, network, accounts) {
+module.exports = function(deployer) {
   const name = "Property";
   const symbol = "PROPERTY";
-  const tokenId = 1;
-  const tokenURI = "";
 
   deployer.deploy(SimpleStorage);
-  deployer.deploy(ERC721NFTTokenStandard, name, symbol, tokenId, tokenURI);
+  deployer.deploy(ERC721TokenStandard, name, symbol);
 };

@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.4.25;
 
 /**
  * @dev See https://github.com/truffle-box/react-box/blob/master/contracts/SimpleStorage.sol

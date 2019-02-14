@@ -9,7 +9,7 @@ participant "PGP" as PGP <<PGP>>
 participant "IPFS" as IPFS <<IPFS>>
 participant "Identity" as Identity <<Ethereum>>
 participant "Reputation" as Reputation <<Ethereum>>
-participant "Token" as Token <<Ethereum>>
+participant "NFTToken" as NFTToken <<Ethereum>>
 
 From -> PGP : Generating Key
 To  -> PGP : Generating Key
@@ -25,9 +25,9 @@ From -> Identity : Identity
 To -> Identity : Identity
 ref over Identity : ERC725
 From -> Reputation : Reputation
-From -> Token : Token
-To -> Token : Token
-ref over Token : ERC715
+From -> NFTToken : NFTToken
+To -> NFTToken : NFTToken
+ref over NFTToken : ERC715
 To -> IPFS : Get Encrypted File
 To -> PGP : Decrypt Encrypted File
 @enduml

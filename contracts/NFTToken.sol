@@ -5,7 +5,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol";
 /**
  * @dev See https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
  */
-contract ERC721TokenStandard is ERC721Token {
+contract NFTToken is ERC721Token {
   uint256 internal nextTokenId = 0;
 
   constructor(string _name, string _symbol) public ERC721Token(_name, _symbol) {}

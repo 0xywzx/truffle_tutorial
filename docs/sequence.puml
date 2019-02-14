@@ -1,0 +1,33 @@
+' Sequence
+@startuml{sequence.png}
+title Sequence
+hide footbox
+
+actor  "From" as From
+actor  "To" as To
+participant "PGP" as PGP <<PGP>>
+participant "IPFS" as IPFS <<IPFS>>
+participant "Identity" as Identity <<Ethereum>>
+participant "Reputation" as Reputation <<Ethereum>>
+participant "Token" as Token <<Ethereum>>
+
+From -> PGP : Generating Key
+To  -> PGP : Generating Key
+To  -> PGP : Export key
+From -> PGP : Import key
+note left : See Identity
+From -> PGP : Edit key
+note left : Trust key\nSee Reputation
+From -> PGP : Encrypt File
+From -> IPFS : Add Encrypted File
+note left : See Token
+From -> Identity : Identity
+To -> Identity : Identity
+ref over Identity : ERC725
+From -> Reputation : Reputation
+From -> Token : Token
+To -> Token : Token
+ref over Token : ERC715
+To -> IPFS : Get Encrypted File
+To -> PGP : Decrypt Encrypted File
+@enduml

@@ -10,21 +10,37 @@ participant "IPFS" as IPFS <<IPFS>>
 participant "Identity" as Identity <<Ethereum>>
 participant "Token" as Token <<Ethereum>>
 
-From -> PGP : Generating Key
 To  -> PGP : Generating Key
 To  -> PGP : Export key
-From -> PGP : Import key
-From -> PGP : Edit key　Trust Key
-From -> PGP : Encrypt File
 ref over PGP : PGP
-From -> IPFS : Add Encrypted File
+To -> IPFS : Add Key
+From -> IPFS : Get Key
 ref over IPFS : IPFS
+From -> PGP : Generating Key
+From -> PGP : Import key
+ref over PGP : PGP
+note left
+Key: Public Key
+end note
+
 From -> Identity : Identity
 To -> Identity : Identity
 ref over Identity : ERC725
+
+From -> PGP : Edit key　Trust Key
+ref over PGP : PGP
 From -> Identity : ClaimVerifier
 To -> Identity : ClaimVerifier
 ref over Identity : ERC735
+
+From -> PGP : Encrypt File
+note left
+File: academic and Professional
+credential, research data
+end note
+ref over PGP : PGP
+From -> IPFS : Add Encrypted File
+ref over IPFS : IPFS
 From -> Token : Token
 To -> Token : Token
 ref over Token : ERC20

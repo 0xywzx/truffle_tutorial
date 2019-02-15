@@ -8,26 +8,31 @@ actor  "To" as To
 participant "PGP" as PGP <<PGP>>
 participant "IPFS" as IPFS <<IPFS>>
 participant "Identity" as Identity <<Ethereum>>
-participant "Reputation" as Reputation <<Ethereum>>
-participant "NFTToken" as NFTToken <<Ethereum>>
+participant "Token" as Token <<Ethereum>>
 
 From -> PGP : Generating Key
 To  -> PGP : Generating Key
 To  -> PGP : Export key
 From -> PGP : Import key
-note left : See Identity
-From -> PGP : Edit key
-note left : Trust key\nSee Reputation
+From -> PGP : Edit key　Trust Key
 From -> PGP : Encrypt File
+ref over PGP : PGP
 From -> IPFS : Add Encrypted File
-note left : See Token
+ref over IPFS : IPFS
 From -> Identity : Identity
 To -> Identity : Identity
 ref over Identity : ERC725
-From -> Reputation : Reputation
-From -> NFTToken : NFTToken
-To -> NFTToken : NFTToken
-ref over NFTToken : ERC715
+From -> Identity : ClaimVerifier
+To -> Identity : ClaimVerifier
+ref over Identity : ERC735
+From -> Token : Token
+To -> Token : Token
+ref over Token : ERC20
+From -> Token : NFTToken
+To -> Token : NFTToken
+ref over Token : ERC721
 To -> IPFS : Get Encrypted File
+ref over IPFS : IPFS
 To -> PGP : Decrypt Encrypted File
+ref over PGP : PGP
 @enduml

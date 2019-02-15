@@ -3,14 +3,21 @@
 title Sequence
 hide footbox
 
-actor  "From" as From
-actor  "To" as To
-participant "PGP" as PGP <<PGP>>
-participant "IPFS" as IPFS <<IPFS>>
-participant "Identity" as Identity <<Ethereum>>
-participant "Token" as Token <<Ethereum>>
+actor  "Alice or Carol" as Alice
+actor  "Bob" as Bob
+participant  "From" as From <<Client>>
+participant  "To" as To<<Client>>
+participant "PGP" as PGP <<PGP>> <<Component>>
+participant "IPFS" as IPFS <<IPFS>><<Component>>
+participant "Identity" as Identity <<Ethereum>><<Component>>
+participant "Token" as Token <<Ethereum>><<Component>>
 
+Alice -> From : From
+Bob -> To : To
 To  -> PGP : Generating Key
+note left
+Key: Public Key
+end note
 To  -> PGP : Export key
 ref over PGP : PGP
 To -> IPFS : Add Key
@@ -19,9 +26,7 @@ ref over IPFS : IPFS
 From -> PGP : Generating Key
 From -> PGP : Import key
 ref over PGP : PGP
-note left
-Key: Public Key
-end note
+
 
 From -> Identity : Identity
 To -> Identity : Identity

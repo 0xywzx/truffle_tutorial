@@ -4,7 +4,6 @@
 ## Quickstart
 
 - Install MetaMask
-- Install IPFS
 - Install IPFS Companion
 - Install OpenPGP (Optional)
 
@@ -19,10 +18,23 @@ git clone git@github.com:ethereum/skills-ledger.git
 cd skills-ledger
 npm install
 ```
+Useful for testing. 
 
 ```sh
 ganache-cli
 truffle compile
 truffle migrate
+truffle test
+```
+
+Useful for deploying to a public network.
+```sh
+truffle compile
+truffle migrate getho
+truffle test
+```
+```sh
+truffle compile
+truffle migrate ropsten
 truffle test
 ```

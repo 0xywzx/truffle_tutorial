@@ -38,3 +38,14 @@ truffle compile
 truffle migrate ropsten
 truffle test
 ```
+IPFS
+```sh
+cd go-ipfs
+./install.sh
+ipfs init
+ipfs daemon
+```
+GPG
+```sh
+brew install gpg2 pinentry-mac
+```

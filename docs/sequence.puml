@@ -31,12 +31,15 @@ ref over PGP : PGP
 From -> Identity : Identity
 To -> Identity : Identity
 ref over Identity : ERC725
-
-From -> PGP : Edit key　Trust Key
-ref over PGP : PGP
 From -> Identity : ClaimVerifier
 To -> Identity : ClaimVerifier
 ref over Identity : ERC735
+
+From -> PGP : Edit key　Trust Key
+ref over PGP : PGP
+From -> Identity : Reputation
+To -> Identity : Reputation
+ref over Identity : Reputation\nApply to Ethereum Improvement Proposals (EIPs)
 
 From -> PGP : Encrypt File
 note left
